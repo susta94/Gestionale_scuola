@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block mybody %}
+    <div class="card">
+     <h1>Benvenuti all scuola Italo Calvino</h1>
+    <p>Benvenuti nel sito ufficiale della scuola Italo Calvino</p>
+    </div>
+    <img src="{% static 'img/unnamed.jpg' %}">
+{% endblock %}
+
+{% block title %}
+    index
+{% endblock %}
