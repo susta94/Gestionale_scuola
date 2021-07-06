@@ -6,7 +6,8 @@
             <tr>
                 <th>Cognome</th>
                 <th>Nome</th>
-                <th>email</th>
+                <th>Email</th>
+                <th>Materia</th>
             </tr>
         </thead>
         <tbody>
@@ -15,6 +16,7 @@
                     <td> {{ prof.cognome }} </td>
                     <td> {{ prof.nome }} </td>
                     <td> {{ prof.email }} </td>
+                    <td> {{ prof.insegnamenti.last }}</td>
                 </tr>
             {% endfor %}
         </tbody>
