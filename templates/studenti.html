@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+
+
+{% block mybody %}
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Cognome</th>
+                <th>Nome</th>
+                <th>email</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for stud in studs %}
+                <tr>
+                    <td> {{ stud.cognome }} </td>
+                    <td> {{ stud.nome }} </td>
+                    <td> {{ stud.email }} </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+     </table>
+{% endblock %}
+
+
+{% block title %}
+    Info Studenti
+{% endblock %}

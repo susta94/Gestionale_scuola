@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block mybody %}
+    <h1>Ecco gli studenti che studiano italiano in terza</h1>
+    {% for i in s %}
+        {{ i.nome }}
+        {{ i.cognome }}
+        {{ i.competenze.all }}
+    {% endfor %}
+
+{% endblock %}
+
+
+{% block title %}
+    info
+{% endblock %}

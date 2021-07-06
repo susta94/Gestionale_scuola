@@ -84,7 +84,7 @@ class Aula(models.Model):
     SEZIONI_CHOICES = [(i,i) for i in list(string.ascii_uppercase)]
 
     sezione = models.CharField(max_length=1, verbose_name='Sezione', choices=SEZIONI_CHOICES)
-    anno = models.IntegerField(max_length=1, verbose_name='Anno', choices=ANNI_CHOICES)
+    anno = models.IntegerField(verbose_name='Anno', choices=ANNI_CHOICES)
 
     class Meta:
         verbose_name_plural = "Aule"
