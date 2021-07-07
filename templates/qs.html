@@ -1,29 +1,14 @@
 {% extends 'base.html' %}
-
-
 {% block mybody %}
-     <h1>Ecco un queryset!</h1>
-
-    <p>Queryset:</p>
-    <p>{{ Gatto }}</p>
-    <p>{{ Papero|unordered_list }}</p>
-    <p>{{ dati }}</p>
-
-    <p>
-    {% for x in Papero %}
-         {{ x }}
-        {% if forloop.last == True %}
-            è l'ultimo giro!
-        {% endif %}
+    <h1>Ecco gli studenti che studiano italiano in terza</h1>
+    {% for i in s %}
+        {{ i.nome }}
+        {{ i.cognome }}
+        {{ i.competenze.all }}
     {% endfor %}
-</p>
-<p>
-{% if "cane" == "cane" %}
-    porocdioaz
-{% endif %}
 
 {% endblock %}
-</p>
+
 
 {% block title %}
     info
