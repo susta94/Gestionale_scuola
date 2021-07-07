@@ -16,7 +16,7 @@
                     <td> {{ prof.cognome }} </td>
                     <td> {{ prof.nome }} </td>
                     <td> {{ prof.email }} </td>
-                    <td> {{ prof.insegnamenti.last }}</td>
+                    <td style="text-transform: capitalize;"> {{ prof.insegnamenti.last.nome }}</td>
                 </tr>
             {% endfor %}
         </tbody>

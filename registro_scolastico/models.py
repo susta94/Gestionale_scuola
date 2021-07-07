@@ -80,7 +80,7 @@ class Voto(models.Model):
 
 class Aula(models.Model):
     import string
-    ANNI_CHOICES = [[1,'1'],[2,'2'],[3,'3'],[4,'4'],[5,'5']]
+    ANNI_CHOICES = [[1, '1'], [2, '2'], [3, '3'], [4, '4'], [5, '5']]
     SEZIONI_CHOICES = [(i,i) for i in list(string.ascii_uppercase)]
 
     sezione = models.CharField(max_length=1, verbose_name='Sezione', choices=SEZIONI_CHOICES)
