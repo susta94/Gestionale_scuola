@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block mybody %}
+    <h1>Dettaglio di {{ prof.nome }} {{ prof.cognome }}</h1>
+
+        Nome: {{ prof.nome }}
+        Cognome: {{ prof.cognome }}
+        Email: {{ prof.email }}
+        Insegnamenti: {{ prof.insegnamenti.all }}
+
+
+{% endblock %}
+
+
+{% block title %}
+    info
+{% endblock %}
