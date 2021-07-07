@@ -54,3 +54,8 @@ def mostra_qs(request):
                                           classe__in=Aula.objects.filter(anno=3))
     context = {'s': s}
     return render(request, 'qs.html', context)
+
+
+def dettaglio_professore(request, id_professore):
+    context = {'prof': Professore.objects.get(id=id_professore)}
+    return render(request, 'dettaglio_prof.html', context)
