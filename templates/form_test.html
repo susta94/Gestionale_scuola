@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+
+{% block mybody %}
+Registra un nuovo professore:
+
+    <form method="post">
+    {% csrf_token %}
+
+
+{% for x in ilmioform %}
+
+    <label>{{ x.label }}</label>
+{{ x }}
+    <br>
+    {% endfor %}
+<br>
+
+<input class="btn btn-primary" type="submit" value="Invia il form" />
+</form>
+    <br>
+    <hr>
+
+{% if new_prof %}
+    <h1 class="text-center">Nuovo Professore</h1>
+    <div>
+        <p> Nome: {{ new_prof.nome }}</p>
+        <p>Cognome: {{ new_prof.cognome }}</p>
+        <p>Email: {{ new_prof.email }}</p>
+    </div>
+{% endif %}
+
+{% endblock %}
+
+SY4wxpNHAgyZtgTMIZEKiNvBqU6F39GwOKkzaqWSMSDjuXkqvWstKqoJbequ7va7
+
+Th8rurPAo1aXEYooXsIHrhystqd5REq5P3ou7sYLADfhFFP2KpwqTUrAeKxUV0UG

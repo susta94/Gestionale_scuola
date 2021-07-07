@@ -4,6 +4,7 @@
     <table class="table">
         <thead>
             <tr>
+                <th>ID</th>
                 <th>Cognome</th>
                 <th>Nome</th>
                 <th>Email</th>
@@ -13,10 +14,12 @@
         <tbody>
             {% for prof in profs %}
                 <tr>
-                    <td> {{ prof.cognome }} </td>
+                    <td> {{ prof.pk }} </td>
+                    <td><a href="{% url 'mostra_professore' prof.pk %}">{{ prof.cognome }}</a> </td>
                     <td> {{ prof.nome }} </td>
                     <td> {{ prof.email }} </td>
                     <td style="text-transform: capitalize;"> {{ prof.insegnamenti.last.nome }}</td>
+                    <td><a href="{% url 'elimina_prof' prof.id %}" class="btn btn-danger">Elimina</a> </td>
                 </tr>
             {% endfor %}
         </tbody>
