@@ -11,11 +11,12 @@
   <body>
 
   {% include 'components/navbar.html' %}
-  <div class="container p-3">
-  {% block mybody %}
 
+  <div class="container p-3 bg-white mt-5 mb-5 shadow-lg contenitori">
+  {% block mybody %}
   {% endblock %}
   </div>
+
   {% include 'components/footer.html' %}
 
   </body>

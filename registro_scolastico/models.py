@@ -29,7 +29,7 @@ class Studente(models.Model):
         # estetismo
         # Questo metodo viene lanciato quando sulla classe viene eseguito un print o quando viene usata come stringa da qualche parte.
         # Può eseguire codice arbitrario ma deve return-are per forza una str
-        return str(self.id) + ' - ' + self.nome + ' ' + self.cognome
+        return self.nome + ' ' + self.cognome
 
 
     def materia_studiate(self):
@@ -63,7 +63,7 @@ class Materia(models.Model):
     nome = models.CharField(max_length=100, verbose_name='insegnamento', help_text='nome insegnamento', blank=False, null=True)
 
     def __str__(self):
-        return str(self.id) + ' - ' + self.nome
+        return self.nome
 
     class Meta:
         verbose_name_plural = "Materie"

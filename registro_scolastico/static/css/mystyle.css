@@ -2,17 +2,36 @@
 
 
 .footerz{
-  background-color: #DCC48E;
+  background-color: #27233A;
+  color: white;
 }
 
  .titolo{
-  background-color: #DCC48E;
+  background-color: #27233A;
+  color: white;
 }
 
 .navigazione{
-  background-color: #B3C0A4;
+  background-color: #505168;
 }
 
 .el_nav{
     color: #505168;
 }
+
+.lateral{
+    background-color: #505168;
+}
+
+.good{
+    background-color: #b3c0a4;
+}
+
+.bad{
+    background-color: #dcc48e;
+}
+
+body{
+    background-color: #eae6d3;
+}
+

@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block mybody %}
+    <div class="row">
+        <div class="col-2 lateral">
+            <nav class="navbar text-white">
+                <ul class="navbar-nav ">
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="{% url 'studenti' %}">Lista studenti</a>
+                    </li>
+                    <hr>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="{% url "iscrizione_studente" %}">Iscrizione</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="col-10">
+                {% block mycontent %}
+                {% endblock %}
+        </div>
+    </div>
+{% endblock %}

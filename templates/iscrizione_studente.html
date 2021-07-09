@@ -1,0 +1,23 @@
+{% extends 'pagina_studenti.html' %}
+
+{% block mycontent %}
+    <h2>Iscriviti alla scuola N.Balasso:</h2>
+    <p>Per registrare un nuovo alunno, compilare il form con i dati corretti <br>
+        una volta compilato premere "Invia" nel bottone in basso. <br>
+    <p>
+    <p>per assicurarsi che l'alunno sia stato creato correttamente,accedere alla pagina <br>
+        "dettaglio studente" e cercare l'alunno pre verificarne i dati con cui è stato iscritto alla nostra scuola
+    </p>
+    <hr>
+
+    <form method="post">
+    {% csrf_token %}
+
+    {% for s in iscr_stud %}
+    <label>{{ s.label }}</label>
+    {{ s }}
+    {% endfor %}
+
+    <input class="btn good mt-2" type="submit" value="Invia" />
+    </form>
+{% endblock %}

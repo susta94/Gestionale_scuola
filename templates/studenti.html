@@ -1,8 +1,7 @@
-{% extends 'base.html' %}
+{% extends 'pagina_studenti.html' %}
 
 
-
-{% block mybody %}
+{% block mycontent %}
     <table class="table">
         <thead>
             <tr>
@@ -14,16 +13,11 @@
         <tbody>
             {% for stud in studs %}
                 <tr>
-                    <td> {{ stud.cognome }} </td>
-                    <td> {{ stud.nome }} </td>
+                    <td><a href="{% url "dettaglio_studente" stud.pk %}"> {{ stud.cognome }} </a></td>
+                    <td><a href="{% url "dettaglio_studente" stud.pk %}"> {{ stud.nome }} </a></td>
                     <td> {{ stud.email }} </td>
                 </tr>
             {% endfor %}
         </tbody>
      </table>
-{% endblock %}
-
-
-{% block title %}
-    Info Studenti
 {% endblock %}

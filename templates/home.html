@@ -1,11 +1,28 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block mybody %}
-    <div class="card">
-     <h1>Benvenuti alla scuola Italo Calvino</h1>
-    <p>Benvenuti nel sito ufficiale della scuola Italo Calvino</p>
+    <div class="row">
+        <div class="col-12">
+            <h1>La scuola</h1>
+            <p>La nostra scuola è un'eccellenza riconosciuta in tutta la regione. <br>
+               Fondata nel 1954 da Natalino Balasso a Sarmede(TV), è sempre stata una scuola dal carattere
+                innovativo, ciò che tuttavia distingue la Nathaniel Balasso e la rende così competitiva è il suo particolare
+                piano di studi, in cui sono gli stessi studenti a scegliere che materie studiare per prepararsi al mondo universitario/lavorativo
+            </p>
+        </div>
     </div>
-    <img src="{% static 'img/unnamed.jpg' %}">
+    <hr>
+    <div class="row">
+        <div class="col-6">
+            <h3>Sembra progettata da Dalì... <br>
+                ...Ma non è così
+            </h3>
+            <p>La particolarità del design della nostra scuola è dovuta al fatto che si è costruito su un ex carcere</p>
+        </div>
+        <div class="col-6">
+            <img src="static/img/unnamed.jpg" alt="panoramica scuola">
+        </div>
+    </div>
 {% endblock %}
 
 {% block title %}
