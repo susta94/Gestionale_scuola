@@ -11,7 +11,7 @@
             </tr>
         </thead>
         <tbody>
-            {% for stud in studs %}
+            {% for stud in paginazione %}
                 <tr>
                     <td><a href="{% url "dettaglio_studente" stud.pk %}"> {{ stud.cognome }} </a></td>
                     <td><a href="{% url "dettaglio_studente" stud.pk %}"> {{ stud.nome }} </a></td>
@@ -20,4 +20,22 @@
             {% endfor %}
         </tbody>
      </table>
+    <div class="pagination">
+    <span class="step-links">
+        {% if paginazione.has_previous %}
+            <a href="?page=1">&laquo; prima </a>
+            <a href="?page={{ paginazione.previous_page_number }}"><<</a>
+        {% endif %}
+
+        <span class="current">
+            Pagina {{ paginazione.number }} di {{ paginazione.paginator.num_pages }}.
+        </span>
+
+        {% if paginazione.has_next %}
+            <a href="?page={{ paginazione.next_page_number }}">>></a>
+            <a href="?page={{ paginazione.paginator.num_pages }}">ultima &raquo;</a>
+        {% endif %}
+    </span>
+</div>
+
 {% endblock %}

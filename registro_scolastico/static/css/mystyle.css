@@ -21,6 +21,7 @@
 
 .lateral{
     background-color: #505168;
+    /*min-height: 100%;*/
 }
 
 .good{
@@ -35,3 +36,6 @@ body{
     background-color: #eae6d3;
 }
 
+#main_content{
+    min-height: calc(100vh - 145px - 155px - 6rem)!important;
+}

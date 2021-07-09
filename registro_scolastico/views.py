@@ -6,7 +6,7 @@ from registro_scolastico.forms import *
 import random
 import pprint
 pp = pprint.PrettyPrinter(indent=4)
-
+from django.core.paginator import Paginator
 
 # homepage
 def index(request):
@@ -21,6 +21,10 @@ def infostudenti(request):
 def studenti(request):
     studs = Studente.objects.all()
     context = {'studs': studs}
+    paginator = Paginator(studs, 25)
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+    context.update({'paginazione': page_obj})
     return render(request, 'studenti.html', context)
 
 
@@ -97,6 +101,9 @@ def iscrizionestudente(request):
     if request.POST:
         dati = dict(request.POST)
         iscrizione = Studente.objects.create(nome=dati["nome"][0], cognome=dati["cognome"][0], email=dati["email"][0])
+        for materia_id in dati["competenze"]:
+            k = Materia.objects.get(pk=int(materia_id))
+            iscrizione.competenze.add(k)
         iscrizione.save()
         context["new_stud"] = iscrizione
     return render(request, "iscrizione_studente.html", context)

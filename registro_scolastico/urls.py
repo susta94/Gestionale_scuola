@@ -4,7 +4,7 @@ from registro_scolastico import views
 urlpatterns = [
     path('', views.index, name='index'),                                                                # Homepage
 
-    path('info_studenti', views.infostudenti, name='info_studenti'),                                    # Sezione studenti
+    path('info_studenti', views.studenti, name='info_studenti'),                                    # Sezione studenti
     path('lista-studenti', views.studenti, name='studenti'),                                            # Lista degli studenti
     path('dettaglio-studente/<id_studente>', views.dettaglio_studente, name='dettaglio_studente'),      # Dettaglio del singolo studente
     path('elimina-studente/<id_studente>', views.elimina_studente, name='elimina_studente'),            # Elimina studente
