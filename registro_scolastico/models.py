@@ -3,6 +3,7 @@
 # Ogni model rappresenterà poi LA TABELLA degli oggetti, il loro insieme generico, l'idea di oggetto e non gli oggetti
 # stessi o un gruppo di oggetti.
 from django.db import models
+from django.urls import reverse_lazy
 
 
 #  OneToOneField    Uno a uno     - univoca                             - informazioni account-->conto in banca
@@ -30,6 +31,9 @@ class Studente(models.Model):
         # Questo metodo viene lanciato quando sulla classe viene eseguito un print o quando viene usata come stringa da qualche parte.
         # Può eseguire codice arbitrario ma deve return-are per forza una str
         return self.nome + ' ' + self.cognome
+
+    def get_absolute_url(self):
+        return reverse_lazy('dettaglio_studente', args=[str(self.pk)])
 
 
     def materia_studiate(self):
@@ -88,6 +92,10 @@ class Aula(models.Model):
 
     class Meta:
         verbose_name_plural = "Aule"
+    def conta_studs(self):
+        return self.alunni.all().count()
+
+
 
     def __str__(self):
         return str(self.anno)+str(self.sezione)

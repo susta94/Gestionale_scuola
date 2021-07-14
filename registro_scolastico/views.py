@@ -1,13 +1,42 @@
 from django.shortcuts import render
 from django.http import HttpResponse, JsonResponse
-from registro_scolastico.models import *
 from django.db.models import ObjectDoesNotExist
+from registro_scolastico.models import *
 from registro_scolastico.forms import *
-import random
 import pprint
-pp = pprint.PrettyPrinter(indent=4)
 from django.core.paginator import Paginator
 from registro_scolastico.forms import RicercaStudente
+from django.views.generic import CreateView, UpdateView, DeleteView, DetailView, ListView
+from django.urls import reverse_lazy
+pp = pprint.PrettyPrinter(indent=4)
+
+
+class LamiaClassView(ListView):
+    queryset = Studente.objects.all().only("nome","cognome","email").prefetch_related("competenze")
+    template_name = "test_class_views.html"
+    paginate_by = 50
+
+class ListaClasse(ListView):
+    queryset = Aula.objects.all()
+    template_name = "lista_classi.html"
+    paginate_by = 50
+
+class IlmioDettaglio(DetailView):
+    model = Studente
+    template_name = "class_based_detail.html"
+
+class CreateStudent(CreateView):
+    model = Studente
+    template_name = "class_based_create.html"
+    form_class = StudentForm
+
+class UpdateStudent(UpdateView):
+    model = Studente
+    form_class = StudentForm
+    success_url = reverse_lazy("index")
+
+class DettaglioClasse(DetailView):
+    model = Aula
 
 # homepage
 def index(request):

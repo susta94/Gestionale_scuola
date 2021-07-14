@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block mybody %}
+
+    <div class="card">
+        <div class="card-header">{{ studente.nome }} {{ studente.cognome }}</div>
+        <div class="card-body">
+        <div class="row">
+            <div class="col-5">
+                <p>{{ studente.email }}</p> <br>
+                <p>{{ studente.classe }}</p>
+            </div>
+            <div class="col-7">
+                <ul>
+                {% for mat in studente.competenze.all %}
+                    <li>{{ mat }}</li>
+                {% endfor %}
+                </ul>
+            </div>
+        </div>
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block title %}
+    Dett materia
+{% endblock %}

@@ -1,27 +1,34 @@
 <div class="container-fluid">
-      <div class="row p-3 titolo">
+    <div class="row p-3 titolo">
         <div class="col-12">
-          <h1>Scuola Statale "Nome Scuola"</h1>
+            <h1>Scuola Statale "Nome Scuola"</h1>
         </div>
-      </div>
-      <div class="row navigazione">
-        <div class="col-12">
-          <ul class="nav justify-content-end">
-            <li class="nav-item">
-              <a class="nav-link el_nav" href="{% url 'index' %}">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link el_nav" href="{% url 'studenti' %}">Studenti</a>
-            </li>
-            <li class="nav-item">
-              <a  class="nav-link el_nav" href="{% url 'professori' %}">Professori</a>
-            </li>            <li class="nav-item">
-              <a  class="nav-link el_nav" href="{% url 'test_form' %}">Test per form</a>
-            </li>
-          </ul>
-        </div>
-      </div>
     </div>
+    <div class="row navigazione">
+        <div class="col-12">
+            <ul class="nav justify-content-end ">
+                <li class="nav-item">
+                    <a class="nav-link el_nav text-white" href="{% url 'index' %}">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link el_nav text-white" href="{% url 'studenti' %}">Studenti</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link el_nav text-white" href="{% url 'professori' %}">Professori</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link el_nav text-white" href="{% url 'test_form' %}">Test per form</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link el_nav text-white" href="{% url 'test-classi' %}">Test per class views</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link el_nav text-white" href="{% url 'lista-classe' %}">Lista classi</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
 
 
 

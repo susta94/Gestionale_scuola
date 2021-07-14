@@ -1,0 +1,30 @@
+{%  extends "base.html" %}
+{% load static %}
+{% block mybody %}
+    <div class="card">
+        <div class="card-header">Lista aule</div>
+        <div class="card-body">
+        <p>Aule totali: {{ aula_list.count }}</p>
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <td>id</td>
+                        <td>Classe</td>
+                        <td>Studenti</td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for aula in aula_list %}
+                    <tr>
+                        <td><a href="{% url 'dett-classe' aula.pk %}">{{ aula.id }}</a></td>
+                        <td>{{ aula }}</td>
+                        <td>{{ aula.conta_studs }}</td>
+                    </tr>
+                    {%  endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock %}

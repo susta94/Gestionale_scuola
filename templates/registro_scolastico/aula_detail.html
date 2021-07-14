@@ -1,0 +1,32 @@
+{%  extends "base.html" %}
+{% load static %}
+{% block mybody %}
+    <div class="card">
+        <div class="card-header">{{ aula.anno }}{{ aula.sezione }}</div>
+        <div class="card-body">
+        <p>Ecco gli studenti della {{ aula }}</p>
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <td>Nome</td>
+                        <td>Cognome</td>
+                        <td>Email</td>
+                        <td>Azioni</td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for stud in aula.alunni.all %}
+                    <tr>
+                        <td>{{ stud.nome }}</td>
+                        <td>{{ stud.cognome }}</td>
+                        <td>{{ stud.email }}</td>
+                        <td>{{ stud.id }}</td>
+                    </tr>
+                    {%  endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -18,4 +18,13 @@ urlpatterns = [
     path('materia/<nome_materia>', views.dettaglio_materia, name='mostra_materia'),
     path('professore/<id_professore>', views.dettaglio_professore, name='mostra_professore'),
     path('test_form', views.form_test_view, name='test_form'),
+
+
+    path('class_test', views.LamiaClassView.as_view(), name="test-classi"),
+    path('class_detail/<pk>', views.IlmioDettaglio.as_view(), name="test-dettaglio"),
+    path('class_create', views.CreateStudent.as_view(), name="class_create"),
+    path('class_update/<pk>', views.UpdateStudent.as_view(), name="class-update"),
+    path('class_classe/<pk>', views.DettaglioClasse.as_view(), name="dett-classe"),
+    path('lista_classi', views.ListaClasse.as_view(), name="lista-classe"),
+
 ]

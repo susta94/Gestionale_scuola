@@ -1,6 +1,6 @@
 import faker
 import random
-from .models import *
+from registro_scolastico.models import *
 
 fake = faker.Faker('it')
 
@@ -52,8 +52,10 @@ def crea_falsa_sezione(n_sezioni):
     anno = Aula.ANNI_CHOICES
     for i in range(n_sezioni):
         for j in range(5):
-            aula_falsa = Aula.objects.create(sezione=sezioni[i][0], anno=anno[j][0])
-            print(f'ho creato l\'aula: {aula_falsa}')
+            aula_falsa, created = Aula.objects.get_or_create(sezione=sezioni[i][0], anno=anno[j][0])
+
+            if created:
+                print(f'ho creato l\'aula: {aula_falsa}')
 
 
 

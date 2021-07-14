@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block mybody %}
+<div>
+    <a class="btn btn-primary" href="{% url 'class_create' %}">
+        Nuovo Studente
+    </a>
+</div>
+
+{% for stud in studente_list %}
+    <a href="{% url 'test-dettaglio' stud.pk %}">{{ stud.nome }} {{ stud.cognome }}</a> - {{ stud.email }} -- {{ stud.competenze.all }} <a href="{% url 'class-update' stud.pk %}" class="btn btn-sm btn-success">Modifica</a><br>
+    {% endfor %}
+
+    <div class="pagination">
+    <span class="step-links">
+        {% if page_obj.has_previous %}
+            <a href="?page=1">&laquo; prima </a>
+            <a href="?page={{ page_obj.previous_page_number }}"><<</a>
+        {% endif %}
+
+        <span class="current">
+            Pagina {{ page_obj.number }} di {{ page_obj.paginator.num_pages }}.
+        </span>
+
+        {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}">>></a>
+            <a href="?page={{ page_obj.paginator.num_pages }}">ultima &raquo;</a>
+        {% endif %}
+    </span>
+</div>
+
+{% endblock %}
+
+{% block title %}
+    Dett materia
+{% endblock %}
