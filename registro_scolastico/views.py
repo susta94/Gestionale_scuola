@@ -7,7 +7,7 @@ import random
 import pprint
 pp = pprint.PrettyPrinter(indent=4)
 from django.core.paginator import Paginator
-from forms import RicercaStudente
+from registro_scolastico.forms import RicercaStudente
 
 # homepage
 def index(request):
